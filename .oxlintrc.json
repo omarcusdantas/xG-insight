@@ -23,7 +23,6 @@
       }
     ],
     "typescript/no-explicit-any": "error",
-    "typescript/no-unnecessary-condition": "warn",
-    "sort-imports": "error"
+    "typescript/no-unnecessary-condition": "warn"
   }
 }
