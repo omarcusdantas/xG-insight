@@ -1,0 +1,65 @@
+{
+  "appTitle": "xG Insight",
+  "search": {
+    "title": "Analise uma partida",
+    "subtitle": "Informe o ID do evento no Sofascore para carregar o mapa de finalizações.",
+    "placeholder": "ID do evento",
+    "cta": "Carregar partida",
+    "invalid": "Informe um ID de evento numérico válido."
+  },
+  "newMatch": "Nova partida",
+  "filters": "Filtros",
+  "teams": {
+    "home": "Mandante",
+    "away": "Visitante"
+  },
+  "cards": {
+    "matchOutcome": "Resultado da partida",
+    "expectedGoals": "Gols esperados",
+    "xGOnTarget": "xG no alvo",
+    "shots": "Finalizações",
+    "homeWin": "Vitória mandante",
+    "draw": "Empate",
+    "awayWin": "Vitória visitante",
+    "noShots": "Nenhuma finalização bate com o filtro atual."
+  },
+  "stats": {
+    "expectedGoals": "Gols esperados",
+    "xGOnTarget": "xG no alvo",
+    "shotsCount_one": "{{count}} finalização",
+    "shotsCount_other": "{{count}} finalizações",
+    "shotsLabel": "{{count}} finalizações"
+  },
+  "goalsTable": {
+    "title": "Gols",
+    "thGoals": "Gols",
+    "thXg": "xG",
+    "thXgot": "xGOT",
+    "thProbability": "Probabilidade"
+  },
+  "shot": {
+    "player": "Jogador",
+    "time": "Tempo",
+    "xg": "xG",
+    "xgot": "xGOT",
+    "result": "Resultado",
+    "previous": "Finalização anterior",
+    "next": "Próxima finalização"
+  },
+  "threshold": {
+    "label": "xG mínimo",
+    "all": "Todas as finalizações",
+    "0_10": "xG \u2265 0.10",
+    "0_15": "xG \u2265 0.15",
+    "0_20": "xG \u2265 0.20"
+  },
+  "errors": {
+    "loadFailed": "Não foi possível carregar esta partida.",
+    "notFound": "Partida não encontrada.",
+    "serverError": "Erro no servidor. Tente novamente."
+  },
+  "actions": {
+    "apply": "Aplicar",
+    "reset": "Limpar"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "appTitle": "xG Insight",
+  "search": {
+    "title": "Analyze a match",
+    "subtitle": "Enter a Sofascore event ID to load its shotmap.",
+    "placeholder": "Event ID",
+    "cta": "Load match",
+    "invalid": "Please enter a valid numeric event ID."
+  },
+  "newMatch": "New match",
+  "filters": "Filters",
+  "teams": {
+    "home": "Home",
+    "away": "Away"
+  },
+  "cards": {
+    "matchOutcome": "Match Outcome",
+    "expectedGoals": "Expected Goals",
+    "xGOnTarget": "xG on Target",
+    "shots": "Shots",
+    "homeWin": "Home Win",
+    "draw": "Draw",
+    "awayWin": "Away Win",
+    "noShots": "No shots match the current filter."
+  },
+  "stats": {
+    "expectedGoals": "Expected Goals",
+    "xGOnTarget": "xG on Target",
+    "shotsCount_one": "{{count}} shot",
+    "shotsCount_other": "{{count}} shots",
+    "shotsLabel": "{{count}} shots"
+  },
+  "goalsTable": {
+    "title": "Goals",
+    "thGoals": "Goals",
+    "thXg": "xG",
+    "thXgot": "xGOT",
+    "thProbability": "Probability"
+  },
+  "shot": {
+    "player": "Player",
+    "time": "Time",
+    "xg": "xG",
+    "xgot": "xGOT",
+    "result": "Result",
+    "previous": "Previous shot",
+    "next": "Next shot"
+  },
+  "threshold": {
+    "label": "Minimum xG",
+    "all": "All shots",
+    "0_10": "xG \u2265 0.10",
+    "0_15": "xG \u2265 0.15",
+    "0_20": "xG \u2265 0.20"
+  },
+  "errors": {
+    "loadFailed": "Could not load this match.",
+    "notFound": "Match not found.",
+    "serverError": "Server error. Please try again."
+  },
+  "actions": {
+    "apply": "Apply",
+    "reset": "Reset"
+  }
+}

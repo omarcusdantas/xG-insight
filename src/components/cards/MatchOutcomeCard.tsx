@@ -1,0 +1,94 @@
+import { Card } from './Card';
+import { pct } from '../../lib/format';
+import { useTranslation } from 'react-i18next';
+
+import type { MatchOutcome } from '../../lib/xg';
+
+type MatchOutcomeCardProps = {
+  outcome: MatchOutcome;
+  outcomeXgot: MatchOutcome;
+};
+
+export function MatchOutcomeCard({
+  outcome,
+  outcomeXgot,
+}: MatchOutcomeCardProps) {
+  const { t } = useTranslation();
+
+  return (
+    <Card title={t('cards.matchOutcome')} titleAccent="match">
+      <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.06em] text-text-dim">
+        <span />
+        <div className="flex gap-3">
+          <span className="text-cyan">xG</span>
+          <span className="text-green/80">xGOT</span>
+        </div>
+      </div>
+
+      <OutcomeRow
+        label={t('cards.homeWin')}
+        xgValue={pct(outcome.homeWin)}
+        xgotValue={pct(outcomeXgot.homeWin)}
+      />
+      <OutcomeRow
+        label={t('cards.draw')}
+        xgValue={pct(outcome.draw)}
+        xgotValue={pct(outcomeXgot.draw)}
+        tone="draw"
+      />
+      <OutcomeRow
+        label={t('cards.awayWin')}
+        xgValue={pct(outcome.awayWin)}
+        xgotValue={pct(outcomeXgot.awayWin)}
+        tone="away"
+      />
+
+      <div className="mt-2 flex h-2.5 gap-0.5 overflow-hidden rounded-full">
+        <div className="bg-cyan" style={{ width: `${outcome.homeWin * 100}%` }} />
+        <div className="bg-yellow" style={{ width: `${outcome.draw * 100}%` }} />
+        <div className="bg-red" style={{ width: `${outcome.awayWin * 100}%` }} />
+      </div>
+      <div className="flex h-2.5 gap-0.5 overflow-hidden rounded-full opacity-50">
+        <div
+          className="bg-cyan"
+          style={{ width: `${outcomeXgot.homeWin * 100}%` }}
+        />
+        <div
+          className="bg-yellow"
+          style={{ width: `${outcomeXgot.draw * 100}%` }}
+        />
+        <div
+          className="bg-red"
+          style={{ width: `${outcomeXgot.awayWin * 100}%` }}
+        />
+      </div>
+    </Card>
+  );
+}
+
+type OutcomeRowProps = {
+  label: string;
+  xgValue: string;
+  xgotValue: string;
+  tone?: 'home' | 'draw' | 'away';
+};
+
+function OutcomeRow({ label, xgValue, xgotValue, tone }: OutcomeRowProps) {
+  const toneClass =
+    tone === 'draw'
+      ? 'text-yellow'
+      : tone === 'away'
+        ? 'text-red'
+        : 'text-cyan';
+  return (
+    <div className="flex items-center justify-between border-b border-border/50 py-2 text-sm last:border-b-0">
+      <span className="text-text-dim">{label}</span>
+      <div className="flex items-baseline gap-3 tabular-nums">
+        <span className={`text-lg font-bold ${toneClass}`}>{xgValue}</span>
+        <span className="text-sm font-semibold text-text-dim">
+          {xgotValue}
+        </span>
+      </div>
+    </div>
+  );
+}
