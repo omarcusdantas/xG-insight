@@ -14,8 +14,8 @@
     "away": "Away"
   },
   "cards": {
-    "matchOutcome": "Match Outcome",
-    "expectedGoals": "Expected Goals",
+    "matchOutcome": "Expected Match Result",
+    "expectedGoals": "Number of Expected Goals",
     "xGOnTarget": "xG on Target",
     "shots": "Shots",
     "homeWin": "Home Win",
@@ -35,7 +35,8 @@
     "thGoals": "Goals",
     "thXg": "xG",
     "thXgot": "xGOT",
-    "thProbability": "Probability"
+    "thProbability": "Probability",
+    "atLeast": "At least {{n}}"
   },
   "shot": {
     "player": "Player",

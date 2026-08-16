@@ -14,8 +14,8 @@
     "away": "Visitante"
   },
   "cards": {
-    "matchOutcome": "Resultado da partida",
-    "expectedGoals": "Gols esperados",
+    "matchOutcome": "Resultado Esperado da Partida",
+    "expectedGoals": "Número de Gols Esperados",
     "xGOnTarget": "xG no alvo",
     "shots": "Finalizações",
     "homeWin": "Vitória mandante",
@@ -35,7 +35,8 @@
     "thGoals": "Gols",
     "thXg": "xG",
     "thXgot": "xGOT",
-    "thProbability": "Probabilidade"
+    "thProbability": "Probabilidade",
+    "atLeast": "Pelo menos {{n}}"
   },
   "shot": {
     "player": "Jogador",

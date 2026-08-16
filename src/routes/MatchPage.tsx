@@ -31,7 +31,12 @@ function MatchPageContent() {
 
   return (
     <main className="mx-auto w-full max-w-200 flex flex-col gap-4 px-4 pb-12 pt-4">
-      <MatchOutcomeCard outcome={matchOutcomeXg} outcomeXgot={matchOutcomeXgot} />
+      <MatchOutcomeCard
+        outcome={matchOutcomeXg}
+        outcomeXgot={matchOutcomeXgot}
+        homeSummary={homeSummary}
+        awaySummary={awaySummary}
+      />
       <TeamSelector />
       <TeamStatsCard summary={summary} titleAccent={team} />
       <ShotsCard />
