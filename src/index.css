@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --bg: #ffffff;
@@ -66,8 +66,8 @@
   --color-cyan-soft: var(--cyan-soft);
   --radius-card: var(--radius);
   --shadow-card: var(--shadow);
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, sans-serif;
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 *,

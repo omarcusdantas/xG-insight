@@ -1,19 +1,19 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 type CardProps = {
   title?: string;
-  titleAccent?: 'home' | 'away' | 'match' | 'neutral';
+  titleAccent?: "home" | "away" | "match" | "neutral";
   children: ReactNode;
 };
 
-const ACCENT_CLASSES: Record<NonNullable<CardProps['titleAccent']>, string> = {
-  home: 'text-cyan',
-  away: 'text-red',
-  match: 'text-accent',
-  neutral: 'text-text-dim',
+const ACCENT_CLASSES: Record<NonNullable<CardProps["titleAccent"]>, string> = {
+  home: "text-cyan",
+  away: "text-red",
+  match: "text-accent",
+  neutral: "text-text-dim",
 };
 
-export function Card({ title, titleAccent = 'neutral', children }: CardProps) {
+export function Card({ title, titleAccent = "neutral", children }: CardProps) {
   return (
     <section className="rounded-(--radius-card) border border-border bg-surface p-5 shadow-(--shadow-card)">
       {title ? (

@@ -1,24 +1,18 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
-import type { SelectHTMLAttributes } from 'react';
+import type { SelectHTMLAttributes } from "react";
 
 interface SelectOption {
   value: string;
   label: string;
 }
 
-interface SelectProps
-  extends Omit<SelectHTMLAttributes<HTMLSelectElement>, 'children'> {
+interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "children"> {
   options: SelectOption[];
   ariaLabel?: string;
 }
 
-export function Select({
-  options,
-  className = '',
-  ariaLabel,
-  ...rest
-}: SelectProps) {
+export function Select({ options, className = "", ariaLabel, ...rest }: SelectProps) {
   return (
     <div className={`relative ${className}`}>
       <select
