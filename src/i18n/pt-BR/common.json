@@ -9,18 +9,13 @@
   },
   "newMatch": "Nova partida",
   "filters": "Filtros",
-  "teams": {
-    "home": "Mandante",
-    "away": "Visitante"
-  },
   "cards": {
     "matchOutcome": "Resultado Esperado da Partida",
     "expectedGoals": "Número de Gols Esperados",
     "xGOnTarget": "xG no alvo",
     "shots": "Finalizações",
-    "homeWin": "Vitória mandante",
+    "win": "Vitória",
     "draw": "Empate",
-    "awayWin": "Vitória visitante",
     "noShots": "Nenhuma finalização bate com o filtro atual."
   },
   "stats": {

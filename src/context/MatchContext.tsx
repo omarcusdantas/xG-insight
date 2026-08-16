@@ -6,10 +6,12 @@ import type { MatchContextValue } from "./matchContextInstance";
 
 type MatchProviderProps = {
   shots: Shot[];
+  homeTeamName: string;
+  awayTeamName: string;
   children: ReactNode;
 };
 
-export function MatchProvider({ shots, children }: MatchProviderProps) {
+export function MatchProvider({ shots, homeTeamName, awayTeamName, children }: MatchProviderProps) {
   const [xgThreshold, setXgThreshold] = useState(0);
   const [team, setTeam] = useState<Team>("home");
   const [shotIndex, setShotIndex] = useState(0);
@@ -27,6 +29,8 @@ export function MatchProvider({ shots, children }: MatchProviderProps) {
   const value = useMemo<MatchContextValue>(
     () => ({
       shots,
+      homeTeamName,
+      awayTeamName,
       xgThreshold,
       team,
       shotIndex,
@@ -36,7 +40,16 @@ export function MatchProvider({ shots, children }: MatchProviderProps) {
       nextShot: () => setShotIndex((i) => i + 1),
       prevShot: () => setShotIndex((i) => Math.max(0, i - 1)),
     }),
-    [shots, xgThreshold, team, shotIndex, handleThresholdChange, handleTeamChange]
+    [
+      shots,
+      homeTeamName,
+      awayTeamName,
+      xgThreshold,
+      team,
+      shotIndex,
+      handleThresholdChange,
+      handleTeamChange,
+    ]
   );
 
   return <MatchContext.Provider value={value}>{children}</MatchContext.Provider>;

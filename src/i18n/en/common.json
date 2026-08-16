@@ -9,18 +9,13 @@
   },
   "newMatch": "New match",
   "filters": "Filters",
-  "teams": {
-    "home": "Home",
-    "away": "Away"
-  },
   "cards": {
     "matchOutcome": "Expected Match Result",
     "expectedGoals": "Number of Expected Goals",
     "xGOnTarget": "xG on Target",
     "shots": "Shots",
-    "homeWin": "Home Win",
+    "win": "Win",
     "draw": "Draw",
-    "awayWin": "Away Win",
     "noShots": "No shots match the current filter."
   },
   "stats": {

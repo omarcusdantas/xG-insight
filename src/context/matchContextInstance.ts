@@ -3,6 +3,8 @@ import type { Shot, Team } from "../types/shotmap";
 
 export interface MatchContextValue {
   shots: Shot[];
+  homeTeamName: string;
+  awayTeamName: string;
   xgThreshold: number;
   team: Team;
   shotIndex: number;

@@ -10,14 +10,19 @@ import { useMatchStats } from "../hooks/useMatchStats";
 import { useRootContext } from "../hooks/useRootContext";
 import { useTranslation } from "react-i18next";
 
-import type { Shot } from "../types/shotmap";
+import type { MatchData } from "../lib/matchLoader";
 
 export function MatchPage() {
-  const shots = useLoaderData() as Shot[];
+  const { shots, eventInfo } = useLoaderData() as MatchData;
   const { id } = useParams();
 
   return (
-    <MatchProvider key={id} shots={shots}>
+    <MatchProvider
+      key={id}
+      shots={shots}
+      homeTeamName={eventInfo.homeTeamName}
+      awayTeamName={eventInfo.awayTeamName}
+    >
       <MatchPageContent />
     </MatchProvider>
   );

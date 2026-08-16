@@ -1,6 +1,7 @@
 import { Card } from "./Card";
 import { pct } from "../../lib/format";
 import { useTranslation } from "react-i18next";
+import { useMatchContext } from "../../hooks/useMatchContext";
 
 import type { MatchOutcome, TeamSummary } from "../../lib/xg";
 
@@ -18,13 +19,14 @@ export function MatchOutcomeCard({
   awaySummary,
 }: MatchOutcomeCardProps) {
   const { t } = useTranslation();
+  const { homeTeamName, awayTeamName } = useMatchContext();
 
   return (
     <Card title={t("cards.matchOutcome")} titleAccent="match">
       <div className="mb-3 grid grid-cols-2 gap-4">
         <div>
           <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-cyan">
-            {t("teams.home")}
+            {homeTeamName}
           </div>
           <div className="flex items-baseline justify-between border-b border-border/50 py-1 text-sm">
             <span className="text-xs text-text-dim">{t("stats.expectedGoals")}</span>
@@ -41,7 +43,7 @@ export function MatchOutcomeCard({
         </div>
         <div>
           <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-red">
-            {t("teams.away")}
+            {awayTeamName}
           </div>
           <div className="flex items-baseline justify-between border-b border-border/50 py-1 text-sm">
             <span className="text-xs text-text-dim">{t("stats.expectedGoals")}</span>
@@ -67,7 +69,7 @@ export function MatchOutcomeCard({
           </div>
         </div>
         <OutcomeRow
-          label={t("cards.homeWin")}
+          label={`${homeTeamName} ${t("cards.win")}`}
           xgValue={pct(outcome.homeWin)}
           xgotValue={pct(outcomeXgot.homeWin)}
         />
@@ -78,7 +80,7 @@ export function MatchOutcomeCard({
           tone="draw"
         />
         <OutcomeRow
-          label={t("cards.awayWin")}
+          label={`${awayTeamName} ${t("cards.win")}`}
           xgValue={pct(outcome.awayWin)}
           xgotValue={pct(outcomeXgot.awayWin)}
           tone="away"
