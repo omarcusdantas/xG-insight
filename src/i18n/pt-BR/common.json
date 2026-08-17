@@ -10,6 +10,7 @@
   "newMatch": "Nova partida",
   "filters": "Filtros",
   "cards": {
+    "matchStatus": "Status da Partida",
     "matchOutcome": "Resultado Esperado da Partida",
     "expectedGoals": "Número de Gols Esperados",
     "xGOnTarget": "xG no alvo",
@@ -57,5 +58,11 @@
   "actions": {
     "apply": "Aplicar",
     "reset": "Limpar"
+  },
+  "status": {
+    "live": "Ao Vivo",
+    "finished": "Encerrado",
+    "notStarted": "Não Iniciado",
+    "postponed": "Adiado"
   }
 }

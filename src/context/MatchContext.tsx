@@ -1,6 +1,7 @@
 import { type ReactNode, useCallback, useMemo, useState } from "react";
 
 import type { Shot, Team } from "../types/shotmap";
+import type { EventInfo } from "../types/event";
 import { MatchContext } from "./matchContextInstance";
 import type { MatchContextValue } from "./matchContextInstance";
 
@@ -8,10 +9,17 @@ type MatchProviderProps = {
   shots: Shot[];
   homeTeamName: string;
   awayTeamName: string;
+  eventInfo: EventInfo;
   children: ReactNode;
 };
 
-export function MatchProvider({ shots, homeTeamName, awayTeamName, children }: MatchProviderProps) {
+export function MatchProvider({
+  shots,
+  homeTeamName,
+  awayTeamName,
+  eventInfo,
+  children,
+}: MatchProviderProps) {
   const [xgThreshold, setXgThreshold] = useState(0);
   const [team, setTeam] = useState<Team>("home");
   const [shotIndex, setShotIndex] = useState(0);
@@ -31,6 +39,7 @@ export function MatchProvider({ shots, homeTeamName, awayTeamName, children }: M
       shots,
       homeTeamName,
       awayTeamName,
+      eventInfo,
       xgThreshold,
       team,
       shotIndex,
@@ -44,6 +53,7 @@ export function MatchProvider({ shots, homeTeamName, awayTeamName, children }: M
       shots,
       homeTeamName,
       awayTeamName,
+      eventInfo,
       xgThreshold,
       team,
       shotIndex,

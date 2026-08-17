@@ -29,13 +29,13 @@ export function MatchOutcomeCard({
             {homeTeamName}
           </div>
           <div className="flex items-baseline justify-between border-b border-border/50 py-1 text-sm">
-            <span className="text-xs text-text-dim">{t("stats.expectedGoals")}</span>
+            <span className="text-xs text-text-dim">{t("stats.expectedGoals") + " (xG)"}</span>
             <span className="text-lg font-bold tabular-nums text-cyan">
               {homeSummary.totalXg.toFixed(2)}
             </span>
           </div>
           <div className="flex items-baseline justify-between py-1 text-sm">
-            <span className="text-xs text-text-dim">{t("stats.xGOnTarget")}</span>
+            <span className="text-xs text-text-dim">{t("stats.xGOnTarget") + " (xGOT)"}</span>
             <span className="text-lg font-bold tabular-nums text-green">
               {homeSummary.totalXgot.toFixed(2)}
             </span>
@@ -46,13 +46,13 @@ export function MatchOutcomeCard({
             {awayTeamName}
           </div>
           <div className="flex items-baseline justify-between border-b border-border/50 py-1 text-sm">
-            <span className="text-xs text-text-dim">{t("stats.expectedGoals")}</span>
+            <span className="text-xs text-text-dim">{t("stats.expectedGoals") + " (xG)"}</span>
             <span className="text-lg font-bold tabular-nums text-cyan">
               {awaySummary.totalXg.toFixed(2)}
             </span>
           </div>
           <div className="flex items-baseline justify-between py-1 text-sm">
-            <span className="text-xs text-text-dim">{t("stats.xGOnTarget")}</span>
+            <span className="text-xs text-text-dim">{t("stats.xGOnTarget") + " (xGOT)"}</span>
             <span className="text-lg font-bold tabular-nums text-green">
               {awaySummary.totalXgot.toFixed(2)}
             </span>

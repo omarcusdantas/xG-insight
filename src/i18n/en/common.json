@@ -10,6 +10,7 @@
   "newMatch": "New match",
   "filters": "Filters",
   "cards": {
+    "matchStatus": "Match Status",
     "matchOutcome": "Expected Match Result",
     "expectedGoals": "Number of Expected Goals",
     "xGOnTarget": "xG on Target",
@@ -57,5 +58,11 @@
   "actions": {
     "apply": "Apply",
     "reset": "Reset"
+  },
+  "status": {
+    "live": "Live",
+    "finished": "Finished",
+    "notStarted": "Not Started",
+    "postponed": "Postponed"
   }
 }

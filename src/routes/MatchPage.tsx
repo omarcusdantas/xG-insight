@@ -3,6 +3,7 @@ import { MatchProvider } from "../context/MatchContext";
 import { useMatchContext } from "../hooks/useMatchContext";
 import { FilterDrawer } from "../components/layout/FilterDrawer";
 import { MatchOutcomeCard } from "../components/cards/MatchOutcomeCard";
+import { MatchStatusCard } from "../components/cards/MatchStatusCard";
 import { ShotsCard } from "../components/cards/ShotsCard";
 import { TeamSelector } from "../components/layout/TeamSelector";
 import { TeamStatsCard } from "../components/cards/TeamStatsCard";
@@ -22,6 +23,7 @@ export function MatchPage() {
       shots={shots}
       homeTeamName={eventInfo.homeTeamName}
       awayTeamName={eventInfo.awayTeamName}
+      eventInfo={eventInfo}
     >
       <MatchPageContent />
     </MatchProvider>
@@ -36,6 +38,7 @@ function MatchPageContent() {
 
   return (
     <main className="mx-auto w-full max-w-200 flex flex-col gap-4 px-4 pb-12 pt-4">
+      <MatchStatusCard />
       <MatchOutcomeCard
         outcome={matchOutcomeXg}
         outcomeXgot={matchOutcomeXgot}
