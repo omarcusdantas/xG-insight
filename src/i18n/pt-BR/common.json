@@ -15,7 +15,6 @@
     "expectedGoals": "Número de Gols Esperados",
     "xGOnTarget": "xG no alvo",
     "shots": "Finalizações",
-    "win": "Vitória",
     "draw": "Empate",
     "noShots": "Nenhuma finalização bate com o filtro atual."
   },

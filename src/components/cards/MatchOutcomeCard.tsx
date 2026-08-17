@@ -23,11 +23,9 @@ export function MatchOutcomeCard({
 
   return (
     <Card title={t("cards.matchOutcome")} titleAccent="match">
-      <div className="mb-3 grid grid-cols-2 gap-4">
+      <div className="mb-3 grid grid-cols-2 gap-6 sm:gap-12">
         <div>
-          <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-cyan">
-            {homeTeamName}
-          </div>
+          <div className="mb-1 text-sm font-semibold tracking-wide text-cyan">{homeTeamName}</div>
           <div className="flex items-baseline justify-between border-b border-border/50 py-1 text-sm">
             <span className="text-xs text-text-dim">{t("stats.expectedGoals") + " (xG)"}</span>
             <span className="text-lg font-bold tabular-nums text-cyan">
@@ -42,9 +40,7 @@ export function MatchOutcomeCard({
           </div>
         </div>
         <div>
-          <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-red">
-            {awayTeamName}
-          </div>
+          <div className="mb-1 text-sm font-semibold tracking-wide text-red">{awayTeamName}</div>
           <div className="flex items-baseline justify-between border-b border-border/50 py-1 text-sm">
             <span className="text-xs text-text-dim">{t("stats.expectedGoals") + " (xG)"}</span>
             <span className="text-lg font-bold tabular-nums text-cyan">
@@ -60,16 +56,16 @@ export function MatchOutcomeCard({
         </div>
       </div>
 
-      <div className="border-t border-border/50 pt-2">
+      <div className="border-border/50 pt-2">
         <div className="flex items-center justify-between pb-1 text-[10px] font-semibold uppercase tracking-[0.06em] text-text-dim">
           <span />
-          <div className="flex gap-3">
-            <span className="text-cyan">xG</span>
-            <span className="text-green/80">xGOT</span>
+          <div className="flex gap-8 tabular-nums sm:gap-14">
+            <span className="w-14 text-right text-cyan">xG</span>
+            <span className="w-14 text-right text-green/80">xGOT</span>
           </div>
         </div>
         <OutcomeRow
-          label={`${homeTeamName} ${t("cards.win")}`}
+          label={`${homeTeamName}`}
           xgValue={pct(outcome.homeWin)}
           xgotValue={pct(outcomeXgot.homeWin)}
         />
@@ -80,7 +76,7 @@ export function MatchOutcomeCard({
           tone="draw"
         />
         <OutcomeRow
-          label={`${awayTeamName} ${t("cards.win")}`}
+          label={`${awayTeamName}`}
           xgValue={pct(outcome.awayWin)}
           xgotValue={pct(outcomeXgot.awayWin)}
           tone="away"
@@ -113,9 +109,11 @@ function OutcomeRow({ label, xgValue, xgotValue, tone }: OutcomeRowProps) {
   return (
     <div className="flex items-center justify-between border-b border-border/50 py-2 text-sm last:border-b-0">
       <span className="text-text-dim">{label}</span>
-      <div className="flex items-baseline gap-3 tabular-nums">
-        <span className={`text-lg font-bold ${toneClass}`}>{xgValue}</span>
-        <span className="text-sm font-semibold text-text-dim">{xgotValue}</span>
+      <div className="flex items-baseline gap-8 tabular-nums sm:gap-14">
+        <span className={`w-14 text-right text-lg font-bold ${toneClass}`}>{xgValue}</span>
+        <span className={`w-14 text-right text-lg font-semibold ${toneClass} opacity-60`}>
+          {xgotValue}
+        </span>
       </div>
     </div>
   );

@@ -52,12 +52,12 @@ export function MatchStatusCard() {
     <Card title={t("cards.matchStatus")} titleAccent="match">
       <div className="text-center text-xs text-text-dim">{tournamentName}</div>
 
-      <div className="flex items-center justify-between gap-3">
-        <span className="flex-1 text-right text-sm font-semibold text-cyan">{homeTeamName}</span>
+      <div className="flex items-baseline justify-between gap-3">
+        <span className="flex-1 text-right text-lg font-semibold text-cyan">{homeTeamName}</span>
         <span className="min-w-16 text-center text-2xl font-bold tabular-nums">
           {homeScore} – {awayScore}
         </span>
-        <span className="flex-1 text-left text-sm font-semibold text-red">{awayTeamName}</span>
+        <span className="flex-1 text-left text-lg font-semibold text-red">{awayTeamName}</span>
       </div>
 
       <div className="flex items-center justify-center gap-2">

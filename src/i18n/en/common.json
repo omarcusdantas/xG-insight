@@ -15,7 +15,6 @@
     "expectedGoals": "Number of Expected Goals",
     "xGOnTarget": "xG on Target",
     "shots": "Shots",
-    "win": "Win",
     "draw": "Draw",
     "noShots": "No shots match the current filter."
   },

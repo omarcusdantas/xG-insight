@@ -7,7 +7,7 @@ export function TeamSelector() {
   const { team, setTeam, homeTeamName, awayTeamName } = useMatchContext();
 
   return (
-    <div className="sticky top-14 z-30 -mx-4 border-b border-border bg-bg/85 px-4 py-3 backdrop-blur-md sm:mx-0 sm:px-0">
+    <div className="sticky top-14 z-30 -mx-4 border-t border-border bg-bg/85 px-4 py-3 pb-0 backdrop-blur-md sm:mx-0 sm:px-0">
       <Select
         ariaLabel={homeTeamName}
         value={team}
