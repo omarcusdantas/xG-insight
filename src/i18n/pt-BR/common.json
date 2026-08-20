@@ -7,6 +7,12 @@
     "cta": "Carregar partida",
     "invalid": "Informe um ID de evento numérico válido."
   },
+  "recentGames": {
+    "title": "Partidas Recentes",
+    "empty": "Nenhuma partida recente. Suas últimas 10 partidas analisadas aparecerão aqui.",
+    "clear": "Limpar histórico",
+    "vs": "vs"
+  },
   "newMatch": "Nova partida",
   "filters": "Filtros",
   "cards": {

@@ -3,6 +3,7 @@ import { Button } from "../components/ui/Button";
 import { Search } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
+import { RecentGamesCard } from "../components/cards/RecentGamesCard";
 
 export function SearchPage() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export function SearchPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-200 flex flex-col gap-6 px-4 py-10">
+    <main className="mx-auto flex w-full max-w-200 flex-1 flex-col gap-6 px-4 py-10">
       <div className="flex flex-col gap-2 text-center sm:text-left">
         <h2 className="text-2xl font-bold tracking-tight text-text">{t("search.title")}</h2>
         <p className="text-sm text-text-dim">{t("search.subtitle")}</p>
@@ -64,6 +65,7 @@ export function SearchPage() {
           {t("search.cta")}
         </Button>
       </form>
+      <RecentGamesCard />
     </main>
   );
 }

@@ -7,6 +7,12 @@
     "cta": "Load match",
     "invalid": "Please enter a valid numeric event ID."
   },
+  "recentGames": {
+    "title": "Recent Games",
+    "empty": "No recent games yet. Your last 10 analyzed matches will appear here.",
+    "clear": "Clear history",
+    "vs": "vs"
+  },
   "newMatch": "New match",
   "filters": "Filters",
   "cards": {

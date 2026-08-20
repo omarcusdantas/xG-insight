@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { isRouteErrorResponse, useLoaderData, useParams, useRouteError } from "react-router";
 import { MatchProvider } from "../context/MatchContext";
 import { useMatchContext } from "../hooks/useMatchContext";
@@ -9,6 +10,7 @@ import { TeamSelector } from "../components/layout/TeamSelector";
 import { TeamStatsCard } from "../components/cards/TeamStatsCard";
 import { useMatchStats } from "../hooks/useMatchStats";
 import { useRootContext } from "../hooks/useRootContext";
+import { addRecentGame } from "../hooks/useRecentGames";
 import { useTranslation } from "react-i18next";
 
 import type { MatchData } from "../lib/matchLoader";
@@ -16,6 +18,22 @@ import type { MatchData } from "../lib/matchLoader";
 export function MatchPage() {
   const { shots, eventInfo } = useLoaderData() as MatchData;
   const { id } = useParams();
+
+  useEffect(() => {
+    if (!id) return;
+    const d = new Date(eventInfo.startTimestamp * 1000);
+    addRecentGame({
+      eventId: id,
+      homeTeamName: eventInfo.homeTeamName,
+      awayTeamName: eventInfo.awayTeamName,
+      tournamentName: eventInfo.tournamentName,
+      date: d.toLocaleDateString(undefined, {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      }),
+    });
+  }, [id, eventInfo]);
 
   return (
     <MatchProvider

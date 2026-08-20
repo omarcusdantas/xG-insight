@@ -11,7 +11,7 @@ function RootLayout() {
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="flex min-h-dvh flex-col">
       <Header onOpenFilters={() => setFiltersOpen(true)} />
       <Outlet context={{ filtersOpen, setFiltersOpen } satisfies RootContext} />
     </div>
