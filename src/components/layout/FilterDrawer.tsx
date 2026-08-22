@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { IconButton } from "../ui/IconButton";
-import { Select } from "../ui/Select";
+import { SegmentedControl } from "../ui/SegmentedControl";
 import { X } from "lucide-react";
 import { useMatchContext } from "../../hooks/useMatchContext";
 import { useTranslation } from "react-i18next";
@@ -51,7 +51,7 @@ export function FilterDrawer({ open, onClose }: FilterDrawerProps) {
   }, [onClose]);
 
   const options = THRESHOLDS.map((value) => ({
-    value: value.toString(),
+    value,
     label:
       value === 0
         ? t("threshold.all")
@@ -77,17 +77,17 @@ export function FilterDrawer({ open, onClose }: FilterDrawerProps) {
           </IconButton>
         </div>
         <div className="flex flex-1 flex-col gap-4 p-5">
-          <label className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2">
             <span className="text-xs font-semibold uppercase tracking-wide text-text-dim">
               {t("threshold.label")}
             </span>
-            <Select
+            <SegmentedControl
               ariaLabel={t("threshold.label")}
               options={options}
-              value={pending.toString()}
-              onChange={(e) => setPending(Number(e.target.value))}
+              value={pending}
+              onChange={setPending}
             />
-          </label>
+          </div>
         </div>
         <div className="flex gap-3 border-t border-border p-5">
           <button

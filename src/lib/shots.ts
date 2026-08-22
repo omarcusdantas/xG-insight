@@ -1,8 +1,9 @@
+import { roundXg } from "./format";
 import type { Shot, Team } from "../types/shotmap";
 
 export function filterShots(shots: Shot[], threshold: number, team: Team): Shot[] {
   return shots
-    .filter((s) => s.xg >= threshold)
+    .filter((s) => roundXg(s.xg, 2) >= threshold)
     .filter((s) => (team === "home" ? s.isHome : !s.isHome))
     .sort((a, b) => a.time - b.time);
 }
