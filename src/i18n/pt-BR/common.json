@@ -2,10 +2,23 @@
   "appTitle": "xG Insight",
   "search": {
     "title": "Analise uma partida",
-    "subtitle": "Informe o ID do evento no Sofascore para carregar o mapa de finalizações.",
-    "placeholder": "ID do evento",
-    "cta": "Carregar partida",
-    "invalid": "Informe um ID de evento numérico válido."
+    "subtitle": "Cole uma URL de partida do Sofascore ou o ID do evento, ou digite o nome de um time para ver suas partidas.",
+    "placeholder": "URL da partida, ID do evento ou nome do time",
+    "cta": "Buscar",
+    "invalid": "Informe uma URL de partida do Sofascore, ID de evento ou nome de time válido."
+  },
+  "teamsModal": {
+    "title": "Times",
+    "loading": "Buscando times...",
+    "empty": "Nenhum time de futebol encontrado.",
+    "national": "Seleção",
+    "female": "Feminino"
+  },
+  "matchesModal": {
+    "title": "Partidas com dados de xG",
+    "notice": "Se a partida não estiver aqui, significa que não há dados de xG disponíveis.",
+    "loading": "Carregando partidas...",
+    "empty": "Nenhuma partida com dados de xG encontrada."
   },
   "recentGames": {
     "title": "Partidas Recentes",

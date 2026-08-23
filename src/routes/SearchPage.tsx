@@ -1,25 +1,42 @@
-import { type SubmitEvent, useState } from "react";
-import { Button } from "../components/ui/Button";
+import { type FormEvent, useState } from "react";
 import { Search } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
+import { Button } from "../components/ui/Button";
 import { RecentGamesCard } from "../components/cards/RecentGamesCard";
+import { TeamsModal } from "../components/search/TeamsModal";
+import { MatchesModal } from "../components/search/MatchesModal";
+import { extractMatchId } from "../lib/parseMatchUrl";
+import type { TeamSearchResult } from "../types/teamSearch";
 
 export function SearchPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [teamsOpen, setTeamsOpen] = useState(false);
+  const [teamQuery, setTeamQuery] = useState("");
+  const [matchesOpen, setMatchesOpen] = useState(false);
+  const [selectedTeam, setSelectedTeam] = useState<TeamSearchResult["entity"] | null>(null);
 
-  function submit(event: SubmitEvent<HTMLFormElement>) {
+  function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const trimmed = value.trim();
-    if (!/^\d+$/.test(trimmed)) {
+    if (!trimmed) {
       setError(t("search.invalid"));
       return;
     }
+
+    const id = extractMatchId(trimmed);
+    if (id) {
+      setError(null);
+      navigate(`/match/${id}`);
+      return;
+    }
+
     setError(null);
-    navigate(`/match/${encodeURIComponent(trimmed)}`);
+    setTeamQuery(trimmed);
+    setTeamsOpen(true);
   }
 
   return (
@@ -42,7 +59,6 @@ export function SearchPage() {
             />
             <input
               type="search"
-              inputMode="numeric"
               autoComplete="off"
               value={value}
               onChange={(e) => {
@@ -65,7 +81,25 @@ export function SearchPage() {
           {t("search.cta")}
         </Button>
       </form>
+
       <RecentGamesCard />
+
+      <TeamsModal
+        open={teamsOpen}
+        onClose={() => setTeamsOpen(false)}
+        query={teamQuery}
+        onSelectTeam={(team) => {
+          setSelectedTeam(team);
+          setTeamsOpen(false);
+          setMatchesOpen(true);
+        }}
+      />
+      <MatchesModal
+        open={matchesOpen}
+        onClose={() => setMatchesOpen(false)}
+        teamId={selectedTeam?.id ?? null}
+        teamName={selectedTeam?.name ?? null}
+      />
     </main>
   );
 }

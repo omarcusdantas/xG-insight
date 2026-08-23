@@ -2,10 +2,23 @@
   "appTitle": "xG Insight",
   "search": {
     "title": "Analyze a match",
-    "subtitle": "Enter a Sofascore event ID to load its shotmap.",
-    "placeholder": "Event ID",
-    "cta": "Load match",
-    "invalid": "Please enter a valid numeric event ID."
+    "subtitle": "Paste a Sofascore match URL or event ID, or type a team name to browse their matches.",
+    "placeholder": "Match URL, event ID or team name",
+    "cta": "Search",
+    "invalid": "Please enter a valid Sofascore match URL, event ID or team name."
+  },
+  "teamsModal": {
+    "title": "Teams",
+    "loading": "Searching teams...",
+    "empty": "No football teams found.",
+    "national": "National team",
+    "female": "Female"
+  },
+  "matchesModal": {
+    "title": "Matches with xG data",
+    "notice": "If a match is missing, it means xG data isn't available for it.",
+    "loading": "Loading matches...",
+    "empty": "No matches with xG data found."
   },
   "recentGames": {
     "title": "Recent Games",
@@ -62,7 +75,8 @@
   },
   "actions": {
     "apply": "Apply",
-    "reset": "Reset"
+    "reset": "Reset",
+    "close": "Close"
   },
   "status": {
     "live": "Live",
