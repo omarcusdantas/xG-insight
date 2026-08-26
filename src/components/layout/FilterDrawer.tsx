@@ -4,8 +4,7 @@ import { SegmentedControl } from "../ui/SegmentedControl";
 import { X } from "lucide-react";
 import { useMatchContext } from "../../hooks/useMatchContext";
 import { useTranslation } from "react-i18next";
-
-const THRESHOLDS = [0, 0.1, 0.15, 0.2] as const;
+import { THRESHOLDS, type XgThreshold } from "../../lib/filters";
 
 type FilterDrawerProps = {
   open: boolean;
@@ -16,7 +15,7 @@ export function FilterDrawer({ open, onClose }: FilterDrawerProps) {
   const { t } = useTranslation();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const { xgThreshold, setXgThreshold } = useMatchContext();
-  const [pending, setPending] = useState(xgThreshold);
+  const [pending, setPending] = useState<XgThreshold>(xgThreshold);
 
   useEffect(() => {
     setPending(xgThreshold);
