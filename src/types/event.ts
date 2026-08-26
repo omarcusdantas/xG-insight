@@ -18,6 +18,6 @@ export interface EventResponse {
     awayScore: { current: number };
     status: { type: string };
     startTimestamp: number;
-    tournament: { name: string };
+    tournament: { name: string; uniqueTournament: { name: string } };
   };
 }

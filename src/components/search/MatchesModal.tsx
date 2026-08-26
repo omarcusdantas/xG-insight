@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Modal } from "../ui/Modal";
-import { fetchTeamPerformance } from "../../lib/fetchTeamPerformance";
-import type { TeamPerformanceEvent } from "../../types/teamPerformance";
+import { fetchTeamLastEvents } from "../../lib/fetchTeamLastEvents";
+import type { TeamEvent } from "../../types/teamLastEvents";
 
 interface MatchesModalProps {
   open: boolean;
@@ -15,7 +15,7 @@ interface MatchesModalProps {
 export function MatchesModal({ open, onClose, teamId, teamName }: MatchesModalProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [events, setEvents] = useState<TeamPerformanceEvent[] | null>(null);
+  const [events, setEvents] = useState<TeamEvent[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -27,7 +27,7 @@ export function MatchesModal({ open, onClose, teamId, teamName }: MatchesModalPr
     setError(null);
     setEvents(null);
 
-    fetchTeamPerformance(teamId)
+    fetchTeamLastEvents(teamId)
       .then((data) => {
         if (!controller.signal.aborted) setEvents(data);
       })
@@ -77,7 +77,7 @@ export function MatchesModal({ open, onClose, teamId, teamName }: MatchesModalPr
 }
 
 interface MatchRowProps {
-  event: TeamPerformanceEvent;
+  event: TeamEvent;
   onNavigate: () => void;
   navigate: ReturnType<typeof useNavigate>;
 }
@@ -116,7 +116,7 @@ function MatchRow({ event, onNavigate, navigate }: MatchRowProps) {
             {event.awayTeam.name}
           </span>
           <span className="min-w-0 truncate text-right text-[11px] text-text-dim">
-            {event.tournament.name}
+            {event.tournament.uniqueTournament.name}
           </span>
           <span />
           <span className="shrink-0 text-left text-[11px] tabular-nums text-text-dim">

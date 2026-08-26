@@ -25,6 +25,6 @@ export async function fetchEvent(id: string): Promise<EventInfo> {
     awayScore: data.event.awayScore.current,
     status,
     startTimestamp: data.event.startTimestamp,
-    tournamentName: data.event.tournament.name,
+    tournamentName: data.event.tournament.uniqueTournament.name,
   };
 }
